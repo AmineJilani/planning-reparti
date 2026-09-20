@@ -1,0 +1,15 @@
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# build
+bin/
+
+# VS Code
+.vscode/
+
+# logs
+*.log

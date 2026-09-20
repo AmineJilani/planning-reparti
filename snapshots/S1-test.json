@@ -1,0 +1,33 @@
+{
+  "snapshotId": "S1",
+  "initiator": "test",
+  "site": "test",
+  "clock": 29,
+  "vector": "A:18,C:12,D:18,test:38",
+  "bilan": -4,
+  "planning": [
+    {
+      "id": "R1",
+      "room": "SalleA",
+      "date": "2026-04-22",
+      "start": "10:00",
+      "end": "11:00",
+      "user": "AMINE",
+      "site": "D"
+    },
+    {
+      "id": "R1",
+      "room": "4546",
+      "date": "2026-04-22",
+      "start": "10:00",
+      "end": "11:00",
+      "user": "AMINE",
+      "site": "test"
+    }
+  ],
+  "collectedStates": [
+    "site=D clock=24 vector=A:18,C:12,D:25,test:27 bilan=-2",
+    "site=C clock=24 vector=A:18,C:19,D:18,test:27 bilan=-4",
+    "site=A clock=25 vector=A:25,C:12,D:18,test:27 bilan=-4"
+  ]
+}

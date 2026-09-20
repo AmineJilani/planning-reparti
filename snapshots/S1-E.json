@@ -1,0 +1,20 @@
+{
+  "snapshotId": "S1",
+  "initiator": "B",
+  "site": "E",
+  "clock": 5,
+  "vector": "A:17,B:22,C:14,E:6",
+  "bilan": 0,
+  "planning": [
+    {
+      "id": "R1",
+      "room": "SalleA",
+      "date": "2026-04-22",
+      "start": "10:00",
+      "end": "11:00",
+      "user": "AMINE",
+      "site": "A"
+    }
+  ],
+  "collectedStates": []
+}

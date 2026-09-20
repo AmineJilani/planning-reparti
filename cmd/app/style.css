@@ -1,0 +1,328 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 16px;
+  overflow: hidden;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f3f6fb;
+  color: #1f2937;
+}
+
+/* HEADER */
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #111827;
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+}
+
+.site-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* LAYOUT PRINCIPAL */
+
+.dashboard-demo {
+  height: calc(100vh - 110px);
+  display: grid;
+  grid-template-columns: 300px 280px 1fr 420px;
+  grid-template-rows: 190px 250px 190px;
+  gap: 14px;
+  grid-template-areas:
+    "commands topology netstate logs"
+    "commands planning planning logs"
+    "state snapshots snapshots logs";
+}
+
+/* PANELS */
+
+.panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  color: #111827;
+}
+
+section h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #374151;
+}
+
+.commands-panel {
+  grid-area: commands;
+  overflow-y: auto;
+}
+
+.topology-panel {
+  grid-area: topology;
+}
+
+.logs-panel {
+  grid-area: logs;
+}
+
+.planning-panel {
+  grid-area: planning;
+  overflow: hidden;
+}
+
+.state-panel {
+  grid-area: state;
+}
+
+.netstate-panel {
+  grid-area: netstate;
+}
+
+.snapshot-panel {
+  grid-area: snapshots;
+}
+
+/* COMMANDES */
+
+.commands-panel section {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.commands-panel section:last-child {
+  border-bottom: none;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 9px 11px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+button {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button.secondary {
+  background: #64748b;
+}
+
+button.secondary:hover {
+  background: #475569;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+button.danger:hover {
+  background: #b91c1c;
+}
+
+.btn-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* TITRE + BOUTON */
+
+.panel-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.panel-title-row h2 {
+  margin: 0;
+}
+
+.panel-title-row button {
+  width: auto;
+  padding: 8px 12px;
+}
+
+/* BLOCS NOIRS */
+
+#logs,
+#snapshots,
+#topology {
+  height: calc(100% - 42px);
+  font-size: 12px;
+}
+#stateView,
+#netStateView {
+  height: calc(100% - 42px);
+  background: #0f172a;
+  color: #d1fae5;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: Consolas, monospace;
+  font-size: 13px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+#stateView,
+#netStateView {
+  height: calc(100% - 48px);
+}
+
+/* TABLEAU */
+
+.table-wrapper {
+  height: calc(100% - 42px);
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 14px;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+  z-index: 1;
+}
+
+td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 9px;
+  text-align: center;
+}
+
+tr:hover {
+  background: #f9fafb;
+}
+
+/* TOPOLOGIE */
+
+.node {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #111827;
+  font-weight: 700;
+}
+
+.node.current {
+  background: #22c55e;
+  color: white;
+}
+
+/* STATUS */
+
+.status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.left {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.snapshot-list {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.snapshot-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+/* LOGS */
+
+#logs {
+  height: calc(100% - 42px);
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/* SNAPSHOTS */
+
+#snapshots {
+  height: calc(100% - 42px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* PLANNING */
+
+.table-wrapper {
+  height: calc(100% - 42px);
+  overflow-y: auto;
+  overflow-x: auto;
+}
